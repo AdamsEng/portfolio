@@ -3,6 +3,7 @@ import { ExternalLink, Github } from "lucide-react"
 import SkillBadge from "@/components/SkillBadge"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { assetPath } from "@/lib/asset-path"
 
 interface Project {
   title: string
@@ -18,7 +19,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card ring-1 ring-foreground/5 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 hover:-translate-y-0.5">
       <div className="relative aspect-video w-full overflow-hidden bg-muted">
         <Image
-          src={project.screenshot}
+          src={assetPath(project.screenshot)}
           alt={`${project.title} screenshot`}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"

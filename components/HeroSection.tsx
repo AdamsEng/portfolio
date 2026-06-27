@@ -3,12 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import SkillBadge from "@/components/SkillBadge"
 import SocialLinks from "@/components/SocialLinks"
 import { portfolioData } from "@/lib/portfolio-data"
+import { assetPath } from "@/lib/asset-path"
 
 export default function HeroSection() {
   return (
     <section className="flex flex-col items-center gap-6 py-20 text-center">
       <Avatar className="size-28 ring-4 ring-primary/40">
-        <AvatarImage src={portfolioData.avatar} alt={portfolioData.name} />
+        <AvatarImage src={assetPath(portfolioData.avatar)} alt={portfolioData.name} />
         <AvatarFallback className="text-2xl font-semibold bg-primary/15 text-primary">
           {portfolioData.avatarFallback}
         </AvatarFallback>
